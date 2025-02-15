@@ -1,9 +1,18 @@
-$primary: #1976d2;
-$secondary: #26a69a;
+@import url('https://fonts.googleapis.com/css2?family=Ysabeau+Infant:ital,wght@0,1..1000;1,1..1000&display=swap');
+
+$typography-font-family: 'Ysabeau Infant', serif;
+
+$primary: #9c9c6e;
+$secondary: #c89863;
 $accent: #9c27b0;
 
 $dark: #1d1d1d;
-$dark-page: #121212;
+$dark-page: #1b1814;
+$dark-card-bg: #252421;
+
+$white-page: #fffcf1;
+$white-text-color: #413628;
+$white-card-bg: #fffaeb;
 
 $positive: #21ba45;
 $negative: #c10015;
