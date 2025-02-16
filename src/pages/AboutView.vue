@@ -18,14 +18,14 @@
     </q-card-section>
 
     <q-card-section>
-      <p class="q-mb-md text-h4 text-weight-medium">Resume</p>
-      dasd
+      <PFProfileResume />
     </q-card-section>
   </q-card>
 </template>
 
 <script lang="ts" setup>
 import PFProfileServices from 'components/profile/PFProfileServices.vue'
+import PFProfileResume from 'components/profile/PFProfileResume.vue'
 
 import WhatIDo from 'src/static/profile-what-i-do'
 </script>

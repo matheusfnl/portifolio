@@ -1,5 +1,5 @@
 <template>
-  <aside>
+  <aside class="aside-content">
     <q-card>
       <q-card-section>
         <div class="profile-card-container flex column items-center">
@@ -62,5 +62,11 @@ import socialLinks from 'src/static/profile-social-links'
     border-radius: 8px;
     padding: 2px 12px 4px;
   }
+}
+
+.aside-content {
+  position: sticky;
+  top: 1.25rem;
+  height: fit-content;
 }
 </style>
