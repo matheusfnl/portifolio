@@ -40,8 +40,8 @@ defineProps<{ socialLink: SocialLink }>()
   }
 
   &:hover {
-    background: linear-gradient(to right, rgba($accent, 0.2), rgba($accent, 0.1));
-    border: 1px solid $accent;
+    background: linear-gradient(to right, rgba($secondary, 0.2), rgba($secondary, 0.1));
+    border: 1px solid $secondary;
     transform: scale(1.015);
   }
 }

@@ -30,15 +30,15 @@ import { computed } from 'vue'
 const route = useRoute()
 const $q = useQuasar()
 
-const menuItems = ['about', 'projects', 'contact']
+const menuItems = ['about', 'projects']
 
 const selected = (menuItem: string) => {
   return route.path.replace('/', '') === menuItem
 }
 
 const getColorByIndex = (index: number) => {
-  const colors = ['primary', 'secondary', 'accent']
-  return colors[index % 3]
+  const colors = ['primary', 'secondary']
+  return colors[index % 2]
 }
 
 const getSelectedItemClass = (item: string, index: number) => {
@@ -82,10 +82,6 @@ const toggleTheme = () => $q.dark.toggle()
     &.hover-secondary:hover {
       color: $secondary;
     }
-
-    &.hover-accent:hover {
-      color: $accent;
-    }
   }
 
   .selected {
@@ -99,10 +95,6 @@ const toggleTheme = () => $q.dark.toggle()
 
     &.secondary {
       background: linear-gradient(to right, $secondary, rgba($secondary, 0.5));
-    }
-
-    &.accent {
-      background: linear-gradient(to right, $accent, rgba($accent, 0.5));
     }
   }
 
