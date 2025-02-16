@@ -6,15 +6,18 @@ export default {
   linkedin: {
     link: 'https://www.linkedin.com/in/matheusgabrielgco',
     icon: LinkedinIcon,
+    name: 'linkedin',
   },
 
   github: {
     link: 'https://github.com/matheusfnl',
     icon: GithubIcon,
+    name: 'github',
   },
 
   instagram: {
     link: 'https://www.instagram.com/matheus.funxl',
     icon: InstagramIcon,
+    name: 'instagram',
   },
 }

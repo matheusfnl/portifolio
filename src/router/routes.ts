@@ -10,6 +10,10 @@ const routes: RouteRecordRaw[] = [
     component: () => import('pages/ProjectsView.vue'),
   },
   {
+    path: '/contact',
+    component: () => import('pages/ContactView.vue'),
+  },
+  {
     path: '/:pathMatch(.*)*',
     redirect: '/about',
   },

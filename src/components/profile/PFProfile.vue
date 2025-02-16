@@ -29,7 +29,7 @@
       </q-card-section>
 
       <q-card-section>
-        <div class="row justify-center q-gutter-md">
+        <div class="column q-gutter-sm">
           <PFProfileSocial
             v-for="(link, index) in Object.values(socialLinks)"
             :key="index"

@@ -5,10 +5,7 @@
         <div v-for="(item, index) in menuItems" :key="item">
           <router-link
             class="menu-btn g-text"
-            :class="[
-              getSelectedItemClass(item, index),
-              index % 2 === 0 ? 'hover-primary' : 'hover-secondary',
-            ]"
+            :class="[getSelectedItemClass(item, index), `hover-${getColorByIndex(index)}`]"
             :to="item"
           >
             {{ $t(`header.menu.${item}`) }}
@@ -39,19 +36,22 @@ const selected = (menuItem: string) => {
   return route.path.replace('/', '') === menuItem
 }
 
+const getColorByIndex = (index: number) => {
+  const colors = ['primary', 'secondary', 'accent']
+  return colors[index % 3]
+}
+
 const getSelectedItemClass = (item: string, index: number) => {
   if (selected(item)) {
-    return index % 2 === 0 ? 'text-primary' : 'text-secondary'
+    return `text-${getColorByIndex(index)}`
   }
-
   return ''
 }
 
 const getLineClass = (item: string, index: number) => {
   if (selected(item)) {
-    return index % 2 === 0 ? 'primary' : 'secondary'
+    return getColorByIndex(index)
   }
-
   return ''
 }
 
@@ -82,6 +82,10 @@ const toggleTheme = () => $q.dark.toggle()
     &.hover-secondary:hover {
       color: $secondary;
     }
+
+    &.hover-accent:hover {
+      color: $accent;
+    }
   }
 
   .selected {
@@ -95,6 +99,10 @@ const toggleTheme = () => $q.dark.toggle()
 
     &.secondary {
       background: linear-gradient(to right, $secondary, rgba($secondary, 0.5));
+    }
+
+    &.accent {
+      background: linear-gradient(to right, $accent, rgba($accent, 0.5));
     }
   }
 

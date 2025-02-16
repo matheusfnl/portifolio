@@ -53,6 +53,7 @@
         </template>
 
         <q-pagination
+          v-if="!loading"
           v-model="current"
           :max="totalPages"
           direction-links
@@ -69,18 +70,15 @@
 
 <script lang="ts" setup>
 import { onMounted, ref } from 'vue'
-import { useRoute, useRouter } from 'vue-router'
 
 import { fetchApi } from 'src/api/fetchApi'
 import tagColors from 'src/enums/tag-colors'
-
-const router = useRouter()
-const route = useRoute()
 
 const repositories = ref<Repository[]>([])
 const current = ref(1)
 const totalPages = ref(1)
 const requestPending = ref(false)
+const loading = ref(true)
 
 interface Repository {
   id: number
@@ -94,8 +92,6 @@ interface Repository {
 const getTagColor = (language: string) => ({ backgroundColor: tagColors[language] || '#9c948c' })
 const fetchRepositories = async () => {
   requestPending.value = true
-
-  router.push({ query: { page: current.value } })
 
   const response = await fetchApi<Repository[]>({
     url: 'users/matheusfnl/repos',
@@ -113,10 +109,6 @@ const fetchRepositories = async () => {
 }
 
 onMounted(async () => {
-  if (route.query.page) {
-    current.value = +route.query.page
-  }
-
   const response = await fetchRepositories()
   const linkHeader = response.headers?.link
 
@@ -126,6 +118,8 @@ onMounted(async () => {
       totalPages.value = lastPage?.[1] ? +lastPage[1] : 1
     }
   }
+
+  loading.value = false
 })
 </script>
 

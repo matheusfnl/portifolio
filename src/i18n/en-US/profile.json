@@ -7,5 +7,19 @@
     "email": "Email",
     "phone": "Phone",
     "location": "Location"
+  },
+  "social": {
+    "github": {
+      "name": "Github",
+      "profile": "matheusfnl"
+    },
+    "instagram": {
+      "name": "Instagram",
+      "profile": "matheus.funxl"
+    },
+    "linkedin": {
+      "name": "Linkedin",
+      "profile": "matheusgabrielgco"
+    }
   }
 }
