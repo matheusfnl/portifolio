@@ -9,6 +9,12 @@
     box-shadow: 0 2px 4px 0 rgba(168, 123, 0, 0.1);
   }
 
+  .q-card-secondary {
+    background: $white-page;
+    border-radius: 0.5rem;
+    border: 1px solid rgba(68, 50, 0, 0.1);
+  }
+
   .g-role-container {
     background-color: rgba($primary, 0.6);
   }
@@ -37,6 +43,13 @@
   .q-card {
     background: $dark-card-bg;
     border-radius: 1rem;
+    border: 1px solid #3f3e3b;
+    box-shadow: none;
+  }
+
+  .q-card-secondary {
+    background: $dark-page;
+    border-radius: 0.5rem;
     border: 1px solid #3f3e3b;
     box-shadow: none;
   }

@@ -54,6 +54,11 @@ const toggleTheme = () => $q.dark.toggle()
     border: none;
     font-size: 18px;
     cursor: pointer;
+    transition: color 0.3s;
+
+    &:hover {
+      color: $primary;
+    }
   }
 
   .selected {
