@@ -5,7 +5,7 @@
     </q-responsive>
 
     <div>
-      <p class="q-mb-none g-label">{{ contact.field }}</p>
+      <p class="q-mb-none g-label">{{ $t(`profile.fields.${contact.field}`) }}</p>
       <a
         v-if="contact.link"
         :href="contact.link"

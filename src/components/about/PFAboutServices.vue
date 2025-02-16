@@ -5,8 +5,13 @@
     </div>
 
     <div>
-      <p class="q-mb-sm text-h5 text-bold">Web development</p>
-      <p class="q-mb-sm">High-quality development of sites at the professional level.</p>
+      <p class="q-mb-sm text-h5 text-bold">
+        {{ $t(`about.services.${data.field}.title`) }}
+      </p>
+
+      <p class="q-mb-sm">
+        {{ $t(`about.services.${data.field}.description`) }}
+      </p>
     </div>
   </div>
 </template>

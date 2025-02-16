@@ -1,31 +1,35 @@
 <template>
   <q-card>
     <q-card-section>
-      <p class="q-mb-none text-h3 text-weight-medium">About me</p>
+      <p class="q-mb-none text-h3 text-weight-medium">
+        {{ $t('about.me.title') }}
+      </p>
+
       <div class="style-line q-my-md" />
       <p class="q-mb-none">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias eos suscipit deleniti
-        veritatis. Totam, sit facilis! Placeat perferendis quisquam, eum, tempora veritatis minima
-        consequatur odio enim laborum, nesciunt nemo sapiente?
+        {{ $t('about.me.description') }}
       </p>
     </q-card-section>
 
     <q-card-section>
-      <p class="q-mb-md text-h4 text-weight-medium">What i do</p>
+      <p class="q-mb-md text-h4 text-weight-medium">
+        {{ $t('about.services.title') }}
+      </p>
+
       <div class="row q-gutter-md">
-        <PFProfileServices v-for="data in Object.values(WhatIDo)" :key="data.field" :data="data" />
+        <PFAboutServices v-for="data in Object.values(WhatIDo)" :key="data.field" :data="data" />
       </div>
     </q-card-section>
 
     <q-card-section>
-      <PFProfileResume />
+      <PFAboutResume />
     </q-card-section>
   </q-card>
 </template>
 
 <script lang="ts" setup>
-import PFProfileServices from 'components/profile/PFProfileServices.vue'
-import PFProfileResume from 'components/profile/PFProfileResume.vue'
+import PFAboutServices from 'components/about/PFAboutServices.vue'
+import PFAboutResume from 'components/about/PFAboutResume.vue'
 
 import WhatIDo from 'src/static/profile-what-i-do'
 </script>

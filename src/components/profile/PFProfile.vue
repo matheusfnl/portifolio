@@ -7,9 +7,13 @@
             <img :src="profilePhoto" class="full-width" />
           </div>
 
-          <p class="text-h4 text-weight-medium q-mb-md">Matheus Gabriel</p>
+          <p class="text-h4 text-weight-medium q-mb-md">
+            {{ $t('profile.owner.name') }}
+          </p>
 
-          <div class="g-role-container">Fullstack Developer</div>
+          <div class="g-role-container">
+            {{ $t('profile.owner.role') }}
+          </div>
         </div>
       </q-card-section>
 

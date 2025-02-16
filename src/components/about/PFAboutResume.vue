@@ -1,14 +1,16 @@
 <template>
   <div class="q-mb-md row q-gutter-md items-end">
-    <p class="q-mb-none text-h4 text-weight-medium">Resume</p>
+    <p class="q-mb-none text-h4 text-weight-medium">
+      {{ $t('about.resume.title') }}
+    </p>
 
-    <div class="option-container flex">
+    <div class="option-container flex items-center">
       <button class="text-button" :class="{ selected: !studyTab }" @click="studyTab = false">
-        Work
+        {{ $t('about.resume.buttons.work') }}
       </button>
       /
       <button class="text-button" :class="{ selected: studyTab }" @click="studyTab = true">
-        Study
+        {{ $t('about.resume.buttons.study') }}
       </button>
     </div>
   </div>
@@ -40,6 +42,7 @@
 
 <script lang="ts" setup>
 import { computed, ref } from 'vue'
+import { useI18n } from 'vue-i18n'
 
 import Roadmap from 'src/static/profile-roadmap'
 
@@ -58,6 +61,8 @@ interface Role {
   end: Date | null
 }
 
+const { t } = useI18n()
+
 const studyTab = ref(false)
 const selectedTabData = computed(() => {
   return studyTab.value ? Roadmap.study : Roadmap.work
@@ -74,7 +79,7 @@ const formatDate = (date: Date) => {
 
 const getPeriodOfTime = (item: RoadmapItem | Role) => {
   const start = formatDate(new Date(item.start))
-  const end = item.end ? formatDate(new Date(item.end)) : 'Atual'
+  const end = item.end ? formatDate(new Date(item.end)) : t('shared.current')
   return `${start} - ${end}`
 }
 </script>
