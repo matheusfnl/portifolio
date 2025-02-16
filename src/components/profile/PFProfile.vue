@@ -69,4 +69,10 @@ import socialLinks from 'src/static/profile-social-links'
   top: 1.25rem;
   height: fit-content;
 }
+
+@media (max-width: 700px) {
+  .aside-content {
+    position: unset;
+  }
+}
 </style>

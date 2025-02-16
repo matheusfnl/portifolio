@@ -31,4 +31,10 @@ import PFHeader from 'components/header/PFHeader.vue'
 .view-container {
   padding-top: 0px !important;
 }
+
+@media (max-width: 700px) {
+  .page-container {
+    flex-direction: column;
+  }
+}
 </style>
