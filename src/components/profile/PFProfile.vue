@@ -66,7 +66,7 @@ import socialLinks from 'src/static/profile-social-links'
 
 .aside-content {
   position: sticky;
-  top: 1.25rem;
+  top: 4rem;
   height: fit-content;
 }
 </style>

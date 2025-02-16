@@ -20,6 +20,7 @@ import PFProfile from 'components/profile/PFProfile.vue'
   width: 100%;
   margin: auto;
   padding: 1.25rem;
+  padding-top: 4rem;
   display: flex;
   gap: 1.25rem;
 }
