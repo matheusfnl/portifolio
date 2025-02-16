@@ -15,8 +15,10 @@
     border: 1px solid rgba(68, 50, 0, 0.1);
   }
 
-  .g-role-container {
+  .g-tag {
     background-color: rgba($primary, 0.6);
+    border-radius: 8px;
+    padding: 2px 12px 4px;
   }
 
   .g-gradient-card {
@@ -54,8 +56,10 @@
     box-shadow: none;
   }
 
-  .g-role-container {
+  .g-tag {
     background-color: rgba(#3f3e3b, 0.5);
+    border-radius: 8px;
+    padding: 2px 12px 4px;
   }
 
   .g-gradient-card {

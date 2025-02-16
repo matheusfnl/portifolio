@@ -11,7 +11,7 @@
             {{ $t('profile.owner.name') }}
           </p>
 
-          <div class="g-role-container">
+          <div class="g-tag">
             {{ $t('profile.owner.role') }}
           </div>
         </div>
@@ -61,11 +61,6 @@ import socialLinks from 'src/static/profile-social-links'
     max-height: 160px;
     border-radius: 28px;
     padding: 1rem;
-  }
-
-  .g-role-container {
-    border-radius: 8px;
-    padding: 2px 12px 4px;
   }
 }
 

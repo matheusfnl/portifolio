@@ -33,7 +33,7 @@
                 :href="repository.homepage"
                 target="_blank"
               >
-                View app
+                {{ $t('projects.view') }}
               </a>
             </div>
 

@@ -25,7 +25,7 @@
 <script lang="ts" setup>
 import { useRoute } from 'vue-router'
 import { useQuasar } from 'quasar'
-import { computed } from 'vue'
+import { computed, onMounted } from 'vue'
 
 const route = useRoute()
 const $q = useQuasar()
@@ -56,7 +56,23 @@ const getLineClass = (item: string, index: number) => {
 }
 
 const getIcon = computed(() => ($q.dark.isActive ? 'wb_sunny' : 'nights_stay'))
-const toggleTheme = () => $q.dark.toggle()
+
+const loadTheme = () => {
+  const darkTheme = localStorage.getItem('@mfpf-theme')
+
+  if (darkTheme) {
+    $q.dark.set(darkTheme === 'dark')
+  }
+}
+
+const toggleTheme = () => {
+  $q.dark.toggle()
+  localStorage.setItem('@mfpf-theme', $q.dark.isActive ? 'dark' : 'light')
+}
+
+onMounted(() => {
+  loadTheme()
+})
 </script>
 
 <style lang="scss" scoped>
@@ -101,6 +117,16 @@ const toggleTheme = () => $q.dark.toggle()
   .theme-btn {
     padding-top: 2px;
     cursor: pointer;
+
+    i {
+      transition: color 0.3s;
+    }
+
+    &:hover {
+      i {
+        color: $primary;
+      }
+    }
   }
 }
 </style>

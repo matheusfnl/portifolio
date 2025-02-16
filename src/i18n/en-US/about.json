@@ -25,6 +25,34 @@
     }
   },
 
+  "tools": {
+    "title": "Tools & Technologies",
+    "names": {
+      "javascript": "JavaScript",
+      "typescript": "TypeScript",
+      "vue": "Vue",
+      "nuxt": "Nuxt",
+      "quasar": "Quasar",
+      "primevue": "PrimeVue",
+      "html": "HTML",
+      "css": "CSS",
+      "tailwind": "Tailwind",
+      "jest": "Jest",
+      "vitest": "Vitest",
+      "php": "PHP",
+      "laravel": "Laravel",
+      "vercel": "Vercel",
+      "docker": "Docker",
+      "docker-compose": "Docker Compose",
+      "mysql": "MySql",
+      "postgresql": "PostgreSql",
+      "git": "Git",
+      "wordpress": "Wordpress",
+      "figma": "Figma",
+      "gml": "GML"
+    }
+  },
+
   "roadmap": {
     "study": {
       "puc-minas": {

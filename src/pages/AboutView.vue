@@ -22,6 +22,18 @@
     </q-card-section>
 
     <q-card-section>
+      <p class="q-mb-md text-h4 text-weight-medium">
+        {{ $t('about.tools.title') }}
+      </p>
+
+      <div class="row q-gutter-sm">
+        <div v-for="tool in Tools" :key="tool" class="g-tag">
+          {{ $t(`about.tools.names.${tool}`) }}
+        </div>
+      </div>
+    </q-card-section>
+
+    <q-card-section>
       <PFAboutResume />
     </q-card-section>
   </q-card>
@@ -32,6 +44,7 @@ import PFAboutServices from 'components/about/PFAboutServices.vue'
 import PFAboutResume from 'components/about/PFAboutResume.vue'
 
 import WhatIDo from 'src/static/profile-what-i-do'
+import Tools from 'src/static/profile-tools.js'
 </script>
 
 <style lang="scss" scoped>
