@@ -24,11 +24,15 @@
   .g-label {
     font-weight: 500;
   }
+
+  .g-text {
+    color: $white-text-color;
+  }
 }
 
 .body--dark {
   background: $dark-page;
-  color: $white-text-color;
+  color: white;
 
   .q-card {
     background: $dark-card-bg;
@@ -55,6 +59,10 @@
 
   .g-label {
     opacity: 0.6;
+  }
+
+  .g-text {
+    color: white;
   }
 }
 

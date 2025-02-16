@@ -3,11 +3,19 @@
     <q-card>
       <div class="row q-gutter-md q-px-md q-py-sm">
         <div v-for="item in menuItems" :key="item">
-          <router-link class="menu-btn" :class="{ 'text-primary': selected(item) }" :to="item">
+          <router-link
+            class="menu-btn g-text"
+            :class="{ 'text-primary': selected(item) }"
+            :to="item"
+          >
             {{ $t(`header.menu.${item}`) }}
           </router-link>
 
           <div v-if="selected(item)" class="selected" />
+        </div>
+
+        <div @click="toggleTheme" class="theme-btn">
+          <q-icon size="22px" :name="getIcon" class="g-text" />
         </div>
       </div>
     </q-card>
@@ -16,14 +24,20 @@
 
 <script lang="ts" setup>
 import { useRoute } from 'vue-router'
+import { useQuasar } from 'quasar'
+import { computed } from 'vue'
 
 const route = useRoute()
+const $q = useQuasar()
 
 const menuItems = ['about', 'projects', 'contact']
 
 const selected = (menuItem: string) => {
   return route.path.replace('/', '') === menuItem
 }
+
+const getIcon = computed(() => ($q.dark.isActive ? 'wb_sunny' : 'nights_stay'))
+const toggleTheme = () => $q.dark.toggle()
 </script>
 
 <style lang="scss" scoped>
@@ -36,10 +50,8 @@ const selected = (menuItem: string) => {
 
   .menu-btn {
     text-decoration: none;
-    color: inherit;
     background: transparent;
     border: none;
-    color: inherit;
     font-size: 18px;
     cursor: pointer;
   }
@@ -49,6 +61,11 @@ const selected = (menuItem: string) => {
     height: 2px;
     background: linear-gradient(to right, $primary, rgba($primary, 0.5));
     border-radius: 10px;
+  }
+
+  .theme-btn {
+    padding-top: 2px;
+    cursor: pointer;
   }
 }
 </style>
