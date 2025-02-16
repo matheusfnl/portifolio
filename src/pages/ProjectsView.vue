@@ -11,7 +11,7 @@
     <q-card-section>
       <div class="column q-gutter-sm">
         <div v-if="requestPending" class="flex justify-center q-my-md">
-          <q-spinner-cube color="primary" size="40px" />
+          <q-spinner-cube color="secondary" size="40px" />
         </div>
 
         <template v-else>
@@ -29,7 +29,7 @@
 
               <a
                 v-if="repository.homepage"
-                class="text-primary text-bold repository-redirect"
+                class="text-secondary text-bold repository-redirect"
                 :href="repository.homepage"
                 target="_blank"
               >
@@ -58,7 +58,8 @@
           direction-links
           flat
           class="q-mt-md"
-          active-color="primary"
+          color="secondary"
+          active-color="secondary"
           @update:modelValue="fetchRepositories"
         />
       </div>
@@ -132,7 +133,7 @@ onMounted(async () => {
 .style-line {
   width: 100%;
   height: 4px;
-  background: linear-gradient(to right, $primary, rgba($primary, 0.5));
+  background: linear-gradient(to right, $secondary, rgba($secondary, 0.5));
   border-radius: 10px;
   width: 80px;
 }
@@ -145,8 +146,8 @@ onMounted(async () => {
     margin-left 0.3s;
 
   &:hover {
-    background: linear-gradient(to right, rgba($primary, 0.2), rgba($primary, 0.1));
-    border: 1px solid $primary;
+    background: linear-gradient(to right, rgba($secondary, 0.2), rgba($secondary, 0.1));
+    border: 1px solid $secondary;
     margin-left: 20px;
   }
 

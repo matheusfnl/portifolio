@@ -1,7 +1,11 @@
 <template>
   <div class="profile-badge row">
     <q-responsive :ratio="1" class="g-gradient-card flex items-center justify-center">
-      <q-icon size="18px" :name="contact.iconName" class="text-primary" />
+      <q-icon
+        size="18px"
+        :name="contact.iconName"
+        :class="index % 2 === 0 ? 'text-primary' : 'text-secondary'"
+      />
     </q-responsive>
 
     <div>
@@ -28,7 +32,10 @@ interface Contact {
   link?: string
 }
 
-defineProps<{ contact: Contact }>()
+defineProps<{
+  contact: Contact
+  index: number
+}>()
 </script>
 
 <style lang="scss" scoped>

@@ -20,9 +20,10 @@
       <q-card-section>
         <div class="column q-gutter-md">
           <PFProfileContact
-            v-for="contact in Object.values(contacts)"
+            v-for="(contact, index) in Object.values(contacts)"
             :key="contact.field"
             :contact="contact"
+            :index="index"
           />
         </div>
       </q-card-section>

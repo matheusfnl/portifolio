@@ -2,16 +2,19 @@
   <q-header class="portifolio-header">
     <q-card>
       <div class="row q-gutter-md q-px-md q-py-sm">
-        <div v-for="item in menuItems" :key="item">
+        <div v-for="(item, index) in menuItems" :key="item">
           <router-link
             class="menu-btn g-text"
-            :class="{ 'text-primary': selected(item) }"
+            :class="[
+              getSelectedItemClass(item, index),
+              index % 2 === 0 ? 'hover-primary' : 'hover-secondary',
+            ]"
             :to="item"
           >
             {{ $t(`header.menu.${item}`) }}
           </router-link>
 
-          <div v-if="selected(item)" class="selected" />
+          <div v-if="selected(item)" class="selected" :class="getLineClass(item, index)" />
         </div>
 
         <div @click="toggleTheme" class="theme-btn">
@@ -36,6 +39,22 @@ const selected = (menuItem: string) => {
   return route.path.replace('/', '') === menuItem
 }
 
+const getSelectedItemClass = (item: string, index: number) => {
+  if (selected(item)) {
+    return index % 2 === 0 ? 'text-primary' : 'text-secondary'
+  }
+
+  return ''
+}
+
+const getLineClass = (item: string, index: number) => {
+  if (selected(item)) {
+    return index % 2 === 0 ? 'primary' : 'secondary'
+  }
+
+  return ''
+}
+
 const getIcon = computed(() => ($q.dark.isActive ? 'wb_sunny' : 'nights_stay'))
 const toggleTheme = () => $q.dark.toggle()
 </script>
@@ -56,16 +75,27 @@ const toggleTheme = () => $q.dark.toggle()
     cursor: pointer;
     transition: color 0.3s;
 
-    &:hover {
+    &.hover-primary:hover {
       color: $primary;
+    }
+
+    &.hover-secondary:hover {
+      color: $secondary;
     }
   }
 
   .selected {
     width: 100%;
     height: 2px;
-    background: linear-gradient(to right, $primary, rgba($primary, 0.5));
     border-radius: 10px;
+
+    &.primary {
+      background: linear-gradient(to right, $primary, rgba($primary, 0.5));
+    }
+
+    &.secondary {
+      background: linear-gradient(to right, $secondary, rgba($secondary, 0.5));
+    }
   }
 
   .theme-btn {
