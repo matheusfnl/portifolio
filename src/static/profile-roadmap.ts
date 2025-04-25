@@ -18,8 +18,8 @@ const works = [
   {
     name: 'gpm',
     roles: [
-      { name: 'fulltime', start: new Date('2022-01-17'), end: new Date('2023-06-17') },
-      { name: 'intern', start: new Date('2023-06-17'), end: new Date('2025-04-14') },
+      { name: 'fulltime', start: new Date('2023-06-17'), end: new Date('2025-04-14') },
+      { name: 'intern', start: new Date('2022-01-17'), end: new Date('2023-06-17') },
     ],
     start: new Date('2022-01-17'),
     end: new Date('2025-04-14'),
