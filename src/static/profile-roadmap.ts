@@ -8,6 +8,24 @@ const i18n = createI18n({
   messages,
 })
 
+const works = [
+  {
+    name: 'onfly',
+    roles: [{ name: 'fulltime', start: new Date('2025-04-14'), end: null }],
+    start: new Date('2025-04-14'),
+    end: null,
+  },
+  {
+    name: 'gpm',
+    roles: [
+      { name: 'fulltime', start: new Date('2022-01-17'), end: new Date('2023-06-17') },
+      { name: 'intern', start: new Date('2023-06-17'), end: new Date('2025-04-14') },
+    ],
+    start: new Date('2022-01-17'),
+    end: new Date('2025-04-14'),
+  },
+]
+
 export default {
   study: [
     {
@@ -19,26 +37,16 @@ export default {
     },
   ],
 
-  work: [
-    {
-      name: i18n.global.t('about.roadmap.work.gpm.name'),
-      start: new Date('2022-01-17'),
-      description: '',
-      end: null,
-      roles: [
-        {
-          name: i18n.global.t('about.roadmap.work.gpm.roles.fulltime.title'),
-          role: i18n.global.t('about.roadmap.work.gpm.roles.fulltime.description'),
-          start: new Date('2023-06-17'),
-          end: null,
-        },
-        {
-          name: i18n.global.t('about.roadmap.work.gpm.roles.intern.title'),
-          role: i18n.global.t('about.roadmap.work.gpm.roles.intern.description'),
-          start: new Date('2022-01-17'),
-          end: new Date('2023-06-17'),
-        },
-      ],
-    },
-  ],
+  work: works.map((work) => ({
+    name: i18n.global.t(`about.roadmap.work.${work.name}.name`),
+    start: work.start,
+    end: work.end,
+    description: i18n.global.t(`about.roadmap.work.${work.name}.description`),
+    roles: work.roles.map((role) => ({
+      name: i18n.global.t(`about.roadmap.work.${work.name}.roles.${role.name}.title`),
+      role: i18n.global.t(`about.roadmap.work.${work.name}.roles.${role.name}.description`),
+      start: role.start,
+      end: role.end,
+    })),
+  })),
 }

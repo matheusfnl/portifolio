@@ -64,13 +64,24 @@
     "work": {
       "gpm": {
         "name": "GPM",
+        "description": "",
         "roles": {
           "intern": {
             "title": "Front-end Developer",
             "description": "Intern"
           },
           "fulltime": {
-            "title": "Systems Analyst",
+            "title": "Junior Systems Analyst",
+            "description": "Full-time"
+          }
+        }
+      },
+      "onfly": {
+        "name": "Onfly",
+        "description": "",
+        "roles": {
+          "fulltime": {
+            "title": "Mid-level Frontend Developer",
             "description": "Full-time"
           }
         }
